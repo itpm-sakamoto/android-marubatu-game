@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, JyankenActivity.class));
+                startActivity(new Intent(MainActivity.this, MaruBatuActivity.class));
                 finish();
             }
         });
