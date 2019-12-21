@@ -3,6 +3,7 @@ package com.example.maru_batu_game_app.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,7 +12,6 @@ import com.example.maru_batu_game_app.R;
 
 import java.util.Random;
 
-import static android.icu.text.DateTimePatternGenerator.PatternInfo.OK;
 
 public class JyankenActivity extends AppCompatActivity {
 
@@ -38,39 +38,91 @@ public class JyankenActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 int result = jankenJuge(3);
-
-                switch (result){
-
-                    case JANKEN_WIN:
-                        new AlertDialog.Builder( JyankenActivity.this )
-                                .setTitle( "結果" )
-                                .setMessage( "勝ち" )
-                                .setPositiveButton("OK" , null )
-                                .show();
-
-                    case JANKEN_LOSE:
-
-                    case JANKEN_DRAW:
-
+                int juge = resultDialog(result);
+                if(juge != 3){
+                    Intent intent = new Intent(JyankenActivity.this, MaruBatuActivity.class);
+                    intent.putExtra( "MaruBatuActivity",juge);
+                    startActivity(intent);
+                }
+            }
+        });
+        jyanken_btn_tyoki.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int result = jankenJuge(2);
+                int juge = resultDialog(result);
+                if(juge != 3){
+                    Intent intent = new Intent(JyankenActivity.this, MaruBatuActivity.class);
+                    intent.putExtra( "MaruBatuActivity",juge);
+                    startActivity(intent);
                 }
 
             }
         });
-
+        jyanken_btn_gu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int result = jankenJuge(1);
+                int juge = resultDialog(result);
+                if(juge != 3){
+                    Intent intent = new Intent(JyankenActivity.this, MaruBatuActivity.class);
+                    intent.putExtra( "MaruBatuActivity",juge);
+                    startActivity(intent);
+                }
+            }
+        });
     }
-    private static int jankenJuge(int jugeHand){
-        Random random = new Random();
-        int randomNo = random.nextInt(3)+1;
 
-        if((jugeHand == 1 && randomNo == 2)
+    private static int jankenJuge(int jugeHand) {
+        Random random = new Random();
+        int randomNo = random.nextInt(3) + 1;
+
+        if ((jugeHand == 1 && randomNo == 2)
                 || (jugeHand == 2 && randomNo == 3)
-                || (jugeHand == 3 && randomNo == 1)){
+                || (jugeHand == 3 && randomNo == 1)) {
             return JANKEN_WIN;
-        } else if((jugeHand == 1 && randomNo == 3)
+        } else if ((jugeHand == 1 && randomNo == 3)
                 || (jugeHand == 2 && randomNo == 1)
-                || (jugeHand == 3 && randomNo == 2)){
+                || (jugeHand == 3 && randomNo == 2)) {
             return JANKEN_LOSE;
         }
         return JANKEN_DRAW;
     }
+
+    private int resultDialog(int reresultDialogNo) {
+
+        int nom = 0;
+        switch (reresultDialogNo) {
+
+            case JANKEN_WIN:
+                new AlertDialog.Builder(this)
+                        .setTitle("勝ち")
+                        .setMessage("あなたは先行です")
+                        .setPositiveButton("OK", null)
+                        .show();
+                        nom = 1;
+                        break;
+
+            case JANKEN_LOSE:
+                new AlertDialog.Builder(JyankenActivity.this)
+                        .setTitle("負け")
+                        .setMessage("あなたは後攻です")
+                        .setPositiveButton("OK", null)
+                        .show();
+                        nom = 2;
+                        break;
+
+            case JANKEN_DRAW:
+                new AlertDialog.Builder(JyankenActivity.this)
+                        .setTitle("あいこ")
+                        .setMessage("もう一度です")
+                        .setPositiveButton("OK", null)
+                        .show();
+                        nom = 3;
+                        break;
+
+        }
+        return nom;
+    }
+
 }

@@ -14,17 +14,18 @@
         android:layout_height="0dp"
         android:layout_weight="4"
         android:orientation="horizontal"
-        android:background="@android:color/holo_blue_light"
         android:gravity="center">
 
 
-        <ImageView
-            android:id="@+id/jyanken_image_view"
-            android:layout_width="300dp"
+        <TextView
+            android:id="@+id/jyanken_text_view"
+            android:layout_width="400dp"
             android:layout_height="300dp"
-            android:background="@android:color/holo_blue_light">
+            android:text="じゃんけんタイム！\n先行後攻を決めるよ！"
+            android:textSize="30sp"
+            android:gravity="center">
 
-        </ImageView>
+        </TextView>
     </LinearLayout>
 
 
@@ -59,7 +60,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@android:color/holo_red_light"
+            android:background="@android:color/holo_blue_light"
             android:text="パー"
             android:textSize="24sp"/>
 
