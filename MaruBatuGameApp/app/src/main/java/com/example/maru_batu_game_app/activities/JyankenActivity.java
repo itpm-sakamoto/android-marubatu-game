@@ -94,6 +94,7 @@ public class JyankenActivity extends AppCompatActivity {
                         })
                         .setCancelable(false)
                         .show();
+                break;
 
             case JANKEN_LOSE:
                 new AlertDialog.Builder(JyankenActivity.this)
@@ -110,6 +111,7 @@ public class JyankenActivity extends AppCompatActivity {
                         })
                         .setCancelable(false)
                         .show();
+                break;
 
             case JANKEN_DRAW:
                 new AlertDialog.Builder(JyankenActivity.this)
