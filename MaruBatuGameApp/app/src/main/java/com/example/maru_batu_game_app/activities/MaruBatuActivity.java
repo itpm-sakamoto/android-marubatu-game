@@ -153,6 +153,7 @@ public class MaruBatuActivity extends AppCompatActivity implements View.OnClickL
                 public void onClick(DialogInterface dialogInterface, int i) {
                     Intent intent = new Intent(MaruBatuActivity.this, MainActivity.class);
                     startActivity(intent);
+                    finish();
                 }
             });
             altBuilder.setCancelable(false);
@@ -168,6 +169,7 @@ public class MaruBatuActivity extends AppCompatActivity implements View.OnClickL
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Intent intent = new Intent(MaruBatuActivity.this, MainActivity.class);
                         startActivity(intent);
+                        finish();
                     }
                 });
                 altBuilder.setCancelable(false);
