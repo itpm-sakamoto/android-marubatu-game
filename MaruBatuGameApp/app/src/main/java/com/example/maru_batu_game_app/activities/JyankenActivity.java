@@ -92,6 +92,7 @@ public class JyankenActivity extends AppCompatActivity {
                                 finish();
                             }
                         })
+                        .setCancelable(false)
                         .show();
 
             case JANKEN_LOSE:
@@ -107,9 +108,8 @@ public class JyankenActivity extends AppCompatActivity {
                                 finish();
                             }
                         })
+                        .setCancelable(false)
                         .show();
-                        nom = 2;
-                        break;
 
             case JANKEN_DRAW:
                 new AlertDialog.Builder(JyankenActivity.this)
@@ -117,7 +117,6 @@ public class JyankenActivity extends AppCompatActivity {
                         .setMessage("もう一度です")
                         .setPositiveButton("OK", null)
                         .show();
-                        nom = 3;
                         break;
 
         }

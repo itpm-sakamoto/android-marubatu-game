@@ -19,7 +19,9 @@
             android:layout_width="400dp"
             android:layout_height="300dp"
             android:text="じゃんけんタイム！\n先行後攻を決めるよ！"
+            android:textColor="@android:color/black"
             android:textSize="30sp"
+            android:textStyle="bold"
             android:gravity="center">
 
         </TextView>
