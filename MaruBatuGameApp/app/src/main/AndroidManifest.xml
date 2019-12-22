@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activities.MainActivity">
+        <activity android:name=".activities.JyankenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,7 +22,7 @@
             android:name=".activities.MaruBatuActivity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".activities.JyankenActivity"
+            android:name=".activities.MainActivity"
             android:screenOrientation="portrait"/>
     </application>
 
