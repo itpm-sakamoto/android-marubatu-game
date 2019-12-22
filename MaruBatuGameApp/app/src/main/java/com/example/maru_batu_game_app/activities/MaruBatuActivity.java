@@ -21,7 +21,7 @@ public class MaruBatuActivity extends AppCompatActivity implements View.OnClickL
 
     private int[][] mMaruBatuMap = {{0, 0, 0},{0, 0, 0},{0, 0, 0}};
 
-    private int[] maruBatsuIcns = {0, R.mipmap.maru, R.mipmap.batu};
+    private int[] maruBatsuIcns = {0, R.mipmap.ic_maru, R.mipmap.ic_batu};
 
     private ImageView mImageViews[][] = new ImageView[3][3];
 
