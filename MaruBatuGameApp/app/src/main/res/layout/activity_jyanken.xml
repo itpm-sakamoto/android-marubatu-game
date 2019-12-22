@@ -19,7 +19,9 @@
             android:layout_width="400dp"
             android:layout_height="300dp"
             android:text="@string/jyanken_start_message"
+            android:textColor="@android:color/black"
             android:textSize="30sp"
+            android:textStyle="bold"
             android:gravity="center">
 
         </TextView>
