@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.JyankenActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/colorJyankenBackground">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,12 +14,11 @@
         android:orientation="horizontal"
         android:gravity="center">
 
-
         <TextView
             android:id="@+id/jyanken_text_view"
             android:layout_width="400dp"
             android:layout_height="300dp"
-            android:text="じゃんけんタイム！\n先行後攻を決めるよ！"
+            android:text="@string/jyanken_start_message"
             android:textSize="30sp"
             android:gravity="center">
 
@@ -32,21 +32,21 @@
         android:layout_weight="1"
         android:orientation="horizontal">
 
-
-
         <FrameLayout
             android:id="@+id/gu_btn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_margin="8dp"
             android:layout_weight="1"
-            android:background="@android:color/holo_orange_light">
+            android:background="@drawable/shape_round_gu_button">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:scaleType="fitCenter"
-                android:src="@mipmap/ic_hand_rock"/>
+                android:src="@mipmap/ic_hand_rock"
+                android:background="?android:attr/selectableItemBackground"/>
         </FrameLayout>
 
         <FrameLayout
@@ -54,14 +54,16 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@android:color/holo_green_light">
+            android:layout_margin="8dp"
+            android:background="@drawable/shape_round_chyoki_button">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:scaleType="fitCenter"
-                android:src="@mipmap/ic_hand_peace"/>
+                android:src="@mipmap/ic_hand_peace"
+                android:background="?android:attr/selectableItemBackground"/>
         </FrameLayout>
 
         <FrameLayout
@@ -69,14 +71,16 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@android:color/holo_blue_light">
+            android:layout_margin="8dp"
+            android:background="@drawable/shape_round_pa_button">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:scaleType="fitCenter"
-                android:src="@mipmap/ic_hand_stop"/>
+                android:src="@mipmap/ic_hand_stop"
+                android:background="?android:attr/selectableItemBackground"/>
         </FrameLayout>
 
     </LinearLayout>
