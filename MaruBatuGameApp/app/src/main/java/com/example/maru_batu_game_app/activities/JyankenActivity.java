@@ -3,10 +3,10 @@ package com.example.maru_batu_game_app.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.FrameLayout;
 
 import com.example.maru_batu_game_app.R;
@@ -39,37 +39,21 @@ public class JyankenActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 int result = jankenJuge(3);
-                int juge = resultDialog(result);
-//                if(juge != 3){
-//                    Intent intent = new Intent(JyankenActivity.this, MaruBatuActivity.class);
-//                    intent.putExtra( "MaruBatuActivity",juge);
-//                    startActivity(intent);
-//                }
+                resultDialog(result);
             }
         });
         jyanken_btn_tyoki.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int result = jankenJuge(2);
-                int juge = resultDialog(result);
-//                if(juge != 3){
-//                    Intent intent = new Intent(JyankenActivity.this, MaruBatuActivity.class);
-//                    intent.putExtra( "MaruBatuActivity",juge);
-//                    startActivity(intent);
-//                }
-
+                resultDialog(result);
             }
         });
         jyanken_btn_gu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int result = jankenJuge(1);
-                int juge = resultDialog(result);
-//                if(juge != 3){
-//                    Intent intent = new Intent(JyankenActivity.this, MaruBatuActivity.class);
-//                    intent.putExtra( "MaruBatuActivity",juge);
-//                    startActivity(intent);
-//                }
+                resultDialog(result);
             }
         });
     }
@@ -90,25 +74,39 @@ public class JyankenActivity extends AppCompatActivity {
         return JANKEN_DRAW;
     }
 
-    private int resultDialog(int reresultDialogNo) {
+    private int resultDialog(int resultDialogNo) {
 
         int nom = 0;
-        switch (reresultDialogNo) {
+        switch (resultDialogNo) {
 
             case JANKEN_WIN:
                 new AlertDialog.Builder(this)
                         .setTitle("勝ち")
                         .setMessage("あなたは先行です")
-                        .setPositiveButton("OK", null)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent intent = new Intent(JyankenActivity.this, MaruBatuActivity.class);
+                                intent.putExtra( "MaruBatuActivity",1);
+                                startActivity(intent);
+                                finish();
+                            }
+                        })
                         .show();
-                        nom = 1;
-                        break;
 
             case JANKEN_LOSE:
                 new AlertDialog.Builder(JyankenActivity.this)
                         .setTitle("負け")
                         .setMessage("あなたは後攻です")
-                        .setPositiveButton("OK", null)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent intent = new Intent(JyankenActivity.this, MaruBatuActivity.class);
+                                intent.putExtra( "MaruBatuActivity",2);
+                                startActivity(intent);
+                                finish();
+                            }
+                        })
                         .show();
                         nom = 2;
                         break;
