@@ -4,4 +4,8 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="colorJyankenBackground">#81D4FA</color>
+    <color name="colorPurple">#9C27B0</color>
+    <color name="colorRed">#F44336</color>
+    <color name="colorIndigo">#3F51B5</color>
+    <color name="colorTeal">#009688</color>
 </resources>
