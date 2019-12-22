@@ -8,4 +8,5 @@
     <color name="colorRed">#F44336</color>
     <color name="colorIndigo">#3F51B5</color>
     <color name="colorTeal">#009688</color>
+    <color name="colorTopBg">#6778BA</color>
 </resources>
