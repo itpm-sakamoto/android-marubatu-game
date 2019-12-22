@@ -116,8 +116,10 @@ public class JyankenActivity extends AppCompatActivity {
                         .setTitle("あいこ")
                         .setMessage("もう一度です")
                         .setPositiveButton("OK", null)
+                        .setCancelable(false)
                         .show();
-                        break;
+
+                break;
 
         }
         return nom;
