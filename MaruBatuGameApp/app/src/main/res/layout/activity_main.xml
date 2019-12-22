@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@android:color/holo_orange_light"
+    android:background="@color/colorTopBg"
     tools:context=".activities.MainActivity">
 
     <LinearLayout
@@ -13,6 +13,25 @@
         android:layout_weight="4"
         android:orientation="vertical"
         android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@mipmap/ic_maru"
+                android:layout_marginEnd="16dp"/>
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@mipmap/ic_batu"/>
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -36,10 +55,13 @@
             android:id="@+id/start_btn"
             android:text="@string/start"
             android:textSize="24sp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="84dp"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"/>
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/shape_round_chyoki_button"/>
 
     </LinearLayout>
 

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -21,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
 
         TextView textView = findViewById(R.id.app_ver);
         textView.setText(getString(R.string.version_name, BuildConfig.VERSION_NAME));
-
 
         Button startBtn = findViewById(R.id.start_btn);
         startBtn.setOnClickListener(new View.OnClickListener() {
