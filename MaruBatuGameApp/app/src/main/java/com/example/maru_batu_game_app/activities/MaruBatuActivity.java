@@ -155,6 +155,7 @@ public class MaruBatuActivity extends AppCompatActivity implements View.OnClickL
                     startActivity(intent);
                 }
             });
+            altBuilder.setCancelable(false);
             altBuilder.show();
 
         } else {
@@ -169,6 +170,7 @@ public class MaruBatuActivity extends AppCompatActivity implements View.OnClickL
                         startActivity(intent);
                     }
                 });
+                altBuilder.setCancelable(false);
                 altBuilder.show();
             }
             //CPUがランダムなところに入力する処理
