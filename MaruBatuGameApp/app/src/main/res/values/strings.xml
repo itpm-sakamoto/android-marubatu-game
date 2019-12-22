@@ -3,4 +3,6 @@
     <string name="start">スタート</string>
     <string name="maru_batu_title">◯ ×\nゲーム</string>
     <string name="jyanken_start_message">じゃんけんタイム！\n先行後攻を決めるよ！</string>
+    <string name="version_name">ver.%s</string>
+
 </resources>
