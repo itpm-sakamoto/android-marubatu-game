@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 
 import com.example.maru_batu_game_app.R;
 
@@ -16,9 +17,9 @@ import java.util.Random;
 public class JyankenActivity extends AppCompatActivity {
 
 
-    private Button jyanen_btn_pa;
-    private Button jyanken_btn_gu;
-    private Button jyanken_btn_tyoki;
+    private FrameLayout jyanen_btn_pa;
+    private FrameLayout jyanken_btn_gu;
+    private FrameLayout jyanken_btn_tyoki;
 
     private static final int JANKEN_WIN = 1;
     private static final int JANKEN_LOSE = 2;
@@ -39,11 +40,11 @@ public class JyankenActivity extends AppCompatActivity {
             public void onClick(View v) {
                 int result = jankenJuge(3);
                 int juge = resultDialog(result);
-                if(juge != 3){
-                    Intent intent = new Intent(JyankenActivity.this, MaruBatuActivity.class);
-                    intent.putExtra( "MaruBatuActivity",juge);
-                    startActivity(intent);
-                }
+//                if(juge != 3){
+//                    Intent intent = new Intent(JyankenActivity.this, MaruBatuActivity.class);
+//                    intent.putExtra( "MaruBatuActivity",juge);
+//                    startActivity(intent);
+//                }
             }
         });
         jyanken_btn_tyoki.setOnClickListener(new View.OnClickListener() {
@@ -51,11 +52,11 @@ public class JyankenActivity extends AppCompatActivity {
             public void onClick(View v) {
                 int result = jankenJuge(2);
                 int juge = resultDialog(result);
-                if(juge != 3){
-                    Intent intent = new Intent(JyankenActivity.this, MaruBatuActivity.class);
-                    intent.putExtra( "MaruBatuActivity",juge);
-                    startActivity(intent);
-                }
+//                if(juge != 3){
+//                    Intent intent = new Intent(JyankenActivity.this, MaruBatuActivity.class);
+//                    intent.putExtra( "MaruBatuActivity",juge);
+//                    startActivity(intent);
+//                }
 
             }
         });
@@ -64,11 +65,11 @@ public class JyankenActivity extends AppCompatActivity {
             public void onClick(View v) {
                 int result = jankenJuge(1);
                 int juge = resultDialog(result);
-                if(juge != 3){
-                    Intent intent = new Intent(JyankenActivity.this, MaruBatuActivity.class);
-                    intent.putExtra( "MaruBatuActivity",juge);
-                    startActivity(intent);
-                }
+//                if(juge != 3){
+//                    Intent intent = new Intent(JyankenActivity.this, MaruBatuActivity.class);
+//                    intent.putExtra( "MaruBatuActivity",juge);
+//                    startActivity(intent);
+//                }
             }
         });
     }

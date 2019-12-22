@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.JyankenActivity"
     android:orientation="vertical">
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,32 +34,50 @@
 
 
 
-        <Button
+        <FrameLayout
             android:id="@+id/gu_btn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@android:color/holo_orange_light"
-            android:text="グー"
-            android:textSize="24sp"/>
+            android:background="@android:color/holo_orange_light">
 
-        <Button
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/ic_hand_rock"/>
+        </FrameLayout>
+
+        <FrameLayout
             android:id="@+id/tyoki_btn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@android:color/holo_green_light"
-            android:text="チョキ"
-            android:textSize="24sp"/>
+            android:background="@android:color/holo_green_light">
 
-        <Button
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/ic_hand_peace"/>
+        </FrameLayout>
+
+        <FrameLayout
             android:id="@+id/pa_btn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@android:color/holo_blue_light"
-            android:text="パー"
-            android:textSize="24sp"/>
+            android:background="@android:color/holo_blue_light">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/ic_hand_stop"/>
+        </FrameLayout>
 
     </LinearLayout>
 
